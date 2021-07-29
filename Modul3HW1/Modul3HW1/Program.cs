@@ -1,18 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
+
 public class Program
 {
     public static void Main(string[] args)
     {
-        var array = new MyList<int>();
+        var list = new MyList<int>();
 
-        array.AddRange(new int[] { 2, 5, 6, 7, 9 });
+        list.Add(3);
+        list.Add(10);
+        list.Add(2);
+        list.Add(7);
+        list.Add(9);
+        list.Add(9);
+        list.Add(6);
+        list.Add(1);
+        list.Add(10);
 
-        array.Sort(new Comparer());
+        list.Remove(9);
+        list.Remove(1);
+        list.RemoveAt(0);
 
-        foreach (var i in array.GetArray())
+        list.Sort(new Comparer());
+
+        foreach (var i in list)
         {
-            Console.WriteLine(i);
+            if (!i.Equals(default(int)))
+            {
+                Console.Write($" {i}");
+            }
         }
     }
 }
