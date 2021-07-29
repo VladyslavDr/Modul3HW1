@@ -17,17 +17,13 @@ public class Program
         list.Add(10);
 
         list.Remove(9);
-        list.Remove(1);
         list.RemoveAt(0);
 
         list.Sort(new Comparer());
 
         foreach (var i in list)
         {
-            if (!i.Equals(default(int)))
-            {
-                Console.Write($" {i}");
-            }
+            Console.Write($" {i}");
         }
     }
 }

@@ -18,7 +18,10 @@ public class MyList<T> : IReadOnlyCollection<T>
     {
         foreach (var i in _array)
         {
-            yield return i;
+            if (!i.Equals(default(T)))
+            {
+                yield return i;
+            }
         }
     }
 
@@ -26,7 +29,10 @@ public class MyList<T> : IReadOnlyCollection<T>
     {
         foreach (var i in _array)
         {
-            yield return i;
+            if (!i.Equals(default(T)))
+            {
+                yield return i;
+            }
         }
     }
 
